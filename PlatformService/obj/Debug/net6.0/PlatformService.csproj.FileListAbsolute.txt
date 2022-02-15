@@ -72,3 +72,4 @@ C:\Users\eliorp\Desktop\Microservices\dotnetMicroServices\PlatformService\obj\De
 C:\Users\eliorp\Desktop\Microservices\dotnetMicroServices\PlatformService\obj\Debug\net6.0\ref\PlatformService.dll
 C:\Users\eliorp\Desktop\Microservices\dotnetMicroServices\PlatformService\obj\Debug\net6.0\PlatformService.pdb
 C:\Users\eliorp\Desktop\Microservices\dotnetMicroServices\PlatformService\obj\Debug\net6.0\PlatformService.genruntimeconfig.cache
+C:\Users\eliorp\Desktop\Microservices\dotnetMicroServices\PlatformService\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.InMemory.dll

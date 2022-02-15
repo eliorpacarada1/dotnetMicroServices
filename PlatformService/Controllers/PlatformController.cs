@@ -24,7 +24,7 @@ namespace PlatformService.Controllers
             var allPlatformsMapped =_mapper.Map<IEnumerable<PlatformReadDto>>(allPlatforms);
             return Ok(allPlatformsMapped);
         }
-        [HttpGet("/getById/{id}")]
+        [HttpGet("/getbyid/{id}")]
         public async Task<ActionResult<PlatformReadDto>> GetPlatformById(int id)
         {
             var platform = _repo.Get(id);
