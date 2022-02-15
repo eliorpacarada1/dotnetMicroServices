@@ -97,6 +97,18 @@
           "build/net6.0/Microsoft.EntityFrameworkCore.Design.props": {}
         }
       },
+      "Microsoft.EntityFrameworkCore.InMemory/6.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "6.0.2"
+        },
+        "compile": {
+          "lib/net6.0/Microsoft.EntityFrameworkCore.InMemory.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.EntityFrameworkCore.InMemory.dll": {}
+        }
+      },
       "Microsoft.EntityFrameworkCore.Relational/6.0.2": {
         "type": "package",
         "dependencies": {
@@ -565,6 +577,20 @@
         "lib/net6.0/Microsoft.EntityFrameworkCore.Design.xml",
         "microsoft.entityframeworkcore.design.6.0.2.nupkg.sha512",
         "microsoft.entityframeworkcore.design.nuspec"
+      ]
+    },
+    "Microsoft.EntityFrameworkCore.InMemory/6.0.2": {
+      "sha512": "Tp0ZXuLFlgyRDRVPnyjjgCnDR/TA+UJDeVM1XejN5G3sLfsDdlPW8cC+Eoi7sHYOWd1dRXGRFUj0lurnz5CObA==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.inmemory/6.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "lib/net6.0/Microsoft.EntityFrameworkCore.InMemory.dll",
+        "lib/net6.0/Microsoft.EntityFrameworkCore.InMemory.xml",
+        "microsoft.entityframeworkcore.inmemory.6.0.2.nupkg.sha512",
+        "microsoft.entityframeworkcore.inmemory.nuspec"
       ]
     },
     "Microsoft.EntityFrameworkCore.Relational/6.0.2": {
@@ -1152,6 +1178,7 @@
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 11.0.0",
       "Microsoft.EntityFrameworkCore >= 6.0.2",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.2",
+      "Microsoft.EntityFrameworkCore.InMemory >= 6.0.2",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.2",
       "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.14.0",
       "Npgsql >= 6.0.3",
@@ -1165,11 +1192,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\eliorp\\Desktop\\road-To-Orleans\\road-to-Orleans\\MicroServices\\PlatformService\\PlatformService.csproj",
+      "projectUniqueName": "C:\\Users\\eliorp\\Desktop\\Microservices\\dotnetMicroServices\\PlatformService\\PlatformService.csproj",
       "projectName": "PlatformService",
-      "projectPath": "C:\\Users\\eliorp\\Desktop\\road-To-Orleans\\road-to-Orleans\\MicroServices\\PlatformService\\PlatformService.csproj",
+      "projectPath": "C:\\Users\\eliorp\\Desktop\\Microservices\\dotnetMicroServices\\PlatformService\\PlatformService.csproj",
       "packagesPath": "C:\\Users\\eliorp\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\eliorp\\Desktop\\road-To-Orleans\\road-to-Orleans\\MicroServices\\PlatformService\\obj\\",
+      "outputPath": "C:\\Users\\eliorp\\Desktop\\Microservices\\dotnetMicroServices\\PlatformService\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\eliorp\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1213,6 +1240,10 @@
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
+            "target": "Package",
+            "version": "[6.0.2, )"
+          },
+          "Microsoft.EntityFrameworkCore.InMemory": {
             "target": "Package",
             "version": "[6.0.2, )"
           },

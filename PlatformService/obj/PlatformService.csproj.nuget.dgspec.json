@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\eliorp\\Desktop\\road-To-Orleans\\road-to-Orleans\\MicroServices\\PlatformService\\PlatformService.csproj": {}
+    "C:\\Users\\eliorp\\Desktop\\Microservices\\dotnetMicroServices\\PlatformService\\PlatformService.csproj": {}
   },
   "projects": {
-    "C:\\Users\\eliorp\\Desktop\\road-To-Orleans\\road-to-Orleans\\MicroServices\\PlatformService\\PlatformService.csproj": {
+    "C:\\Users\\eliorp\\Desktop\\Microservices\\dotnetMicroServices\\PlatformService\\PlatformService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\eliorp\\Desktop\\road-To-Orleans\\road-to-Orleans\\MicroServices\\PlatformService\\PlatformService.csproj",
+        "projectUniqueName": "C:\\Users\\eliorp\\Desktop\\Microservices\\dotnetMicroServices\\PlatformService\\PlatformService.csproj",
         "projectName": "PlatformService",
-        "projectPath": "C:\\Users\\eliorp\\Desktop\\road-To-Orleans\\road-to-Orleans\\MicroServices\\PlatformService\\PlatformService.csproj",
+        "projectPath": "C:\\Users\\eliorp\\Desktop\\Microservices\\dotnetMicroServices\\PlatformService\\PlatformService.csproj",
         "packagesPath": "C:\\Users\\eliorp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\eliorp\\Desktop\\road-To-Orleans\\road-to-Orleans\\MicroServices\\PlatformService\\obj\\",
+        "outputPath": "C:\\Users\\eliorp\\Desktop\\Microservices\\dotnetMicroServices\\PlatformService\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\eliorp\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -55,6 +55,10 @@
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
               "target": "Package",
               "version": "[6.0.2, )"
             },

@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using PlatformService.Data;
 
@@ -12,9 +13,10 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IPlatformRepo, PlatformRepo>();
 
-var connectionString = builder.Configuration.GetConnectionString("MyWebApiConection");
+//var connectionString = builder.Configuration.GetConnectionString("MyWebApiConection");
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseNpgsql(connectionString));
+    options.UseInMemoryDatabase("InMem"));
+
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 var app = builder.Build();
@@ -25,8 +27,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
-app.UseHttpsRedirection();
 
 app.UseAuthorization();
 

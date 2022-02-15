@@ -7,7 +7,7 @@ using PlatformService.Models;
 namespace PlatformService.Controllers
 {
     [ApiController]
-    [Route("/api/v1/[controller]")]
+    [Route("/api/[controller]")]
     public class PlatformController : ControllerBase
     {
         private readonly IPlatformRepo _repo;
@@ -17,7 +17,7 @@ namespace PlatformService.Controllers
             _repo = repo;
             _mapper = mapper;
         }
-        [HttpGet("/all")]
+        [HttpGet]
         public async Task<ActionResult<IEnumerable<PlatformReadDto>>> GetAllPlatforms()
         {
             var allPlatforms = _repo.GetAll();
@@ -31,7 +31,7 @@ namespace PlatformService.Controllers
             var platformMapped = _mapper.Map<PlatformReadDto>(platform);
             return Ok(platformMapped);
         }
-        [HttpPost("/createPlatform")]
+        [HttpPost]
         public async Task<ActionResult<PlatformReadDto>> CreatePlatform([FromBody] PlatformCreateDto request)
         {
             var platform = _mapper.Map<Platform>(request);
