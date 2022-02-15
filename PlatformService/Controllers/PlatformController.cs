@@ -20,14 +20,14 @@ namespace PlatformService.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<PlatformReadDto>>> GetAllPlatforms()
         {
-            var allPlatforms = _repo.GetAll();
+            var allPlatforms = await _repo.GetAll();
             var allPlatformsMapped =_mapper.Map<IEnumerable<PlatformReadDto>>(allPlatforms);
             return Ok(allPlatformsMapped);
         }
         [HttpGet("/getbyid/{id}")]
         public async Task<ActionResult<PlatformReadDto>> GetPlatformById(int id)
         {
-            var platform = _repo.Get(id);
+            var platform = await _repo.Get(id);
             var platformMapped = _mapper.Map<PlatformReadDto>(platform);
             return Ok(platformMapped);
         }
@@ -35,8 +35,8 @@ namespace PlatformService.Controllers
         public async Task<ActionResult<PlatformReadDto>> CreatePlatform([FromBody] PlatformCreateDto request)
         {
             var platform = _mapper.Map<Platform>(request);
-            _repo.CreatePlatform(platform);
-            _repo.SaveChanges();
+            await _repo.CreatePlatform(platform);
+            await _repo.SaveChanges();
             var mappedPlatform = _mapper.Map<PlatformReadDto>(platform);
             return Ok(mappedPlatform);
         }

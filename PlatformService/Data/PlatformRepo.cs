@@ -1,4 +1,5 @@
-﻿using PlatformService.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using PlatformService.Models;
 
 namespace PlatformService.Data
 {
@@ -9,30 +10,31 @@ namespace PlatformService.Data
         {
             _db = db;
         }
-        public void CreatePlatform(Platform platform)
+        public async Task<Platform> CreatePlatform(Platform platform)
         {
-            _db.Platforms.Add(platform);
+            await _db.Platforms.AddAsync(platform);
+            return platform;
         }
 
-        public void Delete(int id)
+        public async Task<Platform> Get(int id)
         {
-            var platForm = Get(id);
-            _db.Platforms.Remove(platForm);
+            var platform = await _db.Platforms.FindAsync(id);
+            if (platform != null)
+            {
+                _db.Entry(platform).State = EntityState.Detached;
+                return platform;
+            }
+            return platform;
         }
 
-        public Platform Get(int id)
+        public async Task<IEnumerable<Platform>> GetAll()
         {
-            return _db.Platforms.FirstOrDefault(p => p.Id == id);   
+            return await _db.Platforms.ToListAsync();
         }
 
-        public IEnumerable<Platform> GetAll()
+        public async Task<bool> SaveChanges()
         {
-            return _db.Platforms.ToList();
-        }
-
-        public bool SaveChanges()
-        {
-            return (_db.SaveChanges() > 0);
+            return await _db.SaveChangesAsync() > 0;
         }
     }
 }
