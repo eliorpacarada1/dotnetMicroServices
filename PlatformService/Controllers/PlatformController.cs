@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using PlatformService.Data;
 using PlatformService.Dtos;
 using PlatformService.Models;
+using PlatformService.SyncDataServices.Http;
 
 namespace PlatformService.Controllers
 {
@@ -12,10 +13,12 @@ namespace PlatformService.Controllers
     {
         private readonly IPlatformRepo _repo;
         private readonly IMapper _mapper;
-        public PlatformController(IPlatformRepo repo, IMapper mapper )
+        private readonly ICommandDataClient _commandDataClient;
+        public PlatformController(IPlatformRepo repo, IMapper mapper,ICommandDataClient commandDataClient)
         {
             _repo = repo;
             _mapper = mapper;
+            _commandDataClient = commandDataClient;
         }
         [HttpGet]
         public async Task<ActionResult<IEnumerable<PlatformReadDto>>> GetAllPlatforms()
@@ -38,6 +41,16 @@ namespace PlatformService.Controllers
             await _repo.CreatePlatform(platform);
             await _repo.SaveChanges();
             var mappedPlatform = _mapper.Map<PlatformReadDto>(platform);
+
+            try
+            {
+                await _commandDataClient.SendPlatformToCommand(mappedPlatform);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
             return Ok(mappedPlatform);
         }
     }

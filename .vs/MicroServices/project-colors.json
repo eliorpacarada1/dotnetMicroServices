@@ -15,7 +15,12 @@
       "ProjectGuid": "ff7b22cc-591c-4941-8e7e-aee8a2d683bf",
       "DisplayName": "K8S",
       "ColorIndex": 1
+    },
+    "30c8d07f-2476-4d56-a5e2-eea6b3921a8e": {
+      "ProjectGuid": "30c8d07f-2476-4d56-a5e2-eea6b3921a8e",
+      "DisplayName": "CommandsService",
+      "ColorIndex": 2
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 3
 }
