@@ -20,7 +20,7 @@ namespace PlatformService.SyncDataServices.Http
                 JsonSerializer.Serialize(plat),
                 Encoding.UTF8,
                 "application/json");
-            var response = await _httpClient.PostAsync($"http://commands-clusterip-srv:80/api/c/platform/", httpContent);
+            var response = await _httpClient.PostAsync($"http://commands-clusterip-srv:80/api/c/platforms/", httpContent);
 
             if (response.IsSuccessStatusCode)
             {
