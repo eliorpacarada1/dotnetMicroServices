@@ -10,7 +10,7 @@ namespace CommandsService.Controllers
         {
 
         }
-        [HttpGet]
+        [HttpPost]
         public ActionResult Test()
         {
             Console.WriteLine("smth happened");
